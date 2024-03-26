@@ -65,9 +65,7 @@ export default function AusthForm() {
     return (
         <div>
             <h3>121</h3>
-            {/* <h2>
-                {isloging ? '登录' : '注册'}
-            </h2> */}
+            <h1>m分支</h1>
             <p style={{ color: 'red' }}>
                 {regError ? regError.data.error.message : ''}
             </p>
