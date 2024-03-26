@@ -65,7 +65,8 @@ export default function AusthForm() {
     return (
         <div>
             <h1>21121</h1>
-            <h1>dev分支一次</h1>
+            <h1>dev分支二次</h1>
+            <h1>main分支二次</h1>
             <p style={{ color: 'red' }}>
                 {regError ? regError.data.error.message : ''}
             </p>
