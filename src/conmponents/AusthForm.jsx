@@ -64,9 +64,10 @@ export default function AusthForm() {
 
     return (
         <div>
-            <h2>
-                {isloging ? '登录' : '注册'}
-            </h2>
+            <h1>21121</h1>
+            {/* <h2>
+                {isloging ? '登录' : '注册'}嗨害嗨
+            </h2> */}
             <p style={{ color: 'red' }}>
                 {regError ? regError.data.error.message : ''}
             </p>
