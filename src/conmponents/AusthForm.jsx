@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 //redux触发器
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 //RTKQ接口引入
 import { useRegisterMutation, useLoginMutation } from '../store/api/authApi'
 //redux 数据引入
 import { login } from "../store/reducer/authSlice"
 //路由跳转
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useLocation } from 'react-router-dom'
 
 
 export default function AusthForm() {
@@ -16,10 +16,13 @@ export default function AusthForm() {
     const [regFn, { error: regError }] = useRegisterMutation()
     //登录接口
     const [logFn, { error: logError }] = useLoginMutation()
-
+    //上次路由
+    const location =useLocation()
+    //获取上次路由地址
+    const form=location.state?.preLocation?.pathname || '/'
+    
     //dispatch触发器
     const dispatch = useDispatch()
-
 
     //路由跳转
     const navigate = useNavigate()
@@ -47,7 +50,7 @@ export default function AusthForm() {
                         user: res.data.user,
                     }))
                     //跳转路由
-                    navigate('/', { replace: true })
+                    navigate(form, { replace: true })
                 }
             })
         } else {
@@ -64,9 +67,6 @@ export default function AusthForm() {
 
     return (
         <div>
-            <h1>21121</h1>
-            <h1>dev分支二次</h1>
-            <h1>main分支二次</h1>
             <p style={{ color: 'red' }}>
                 {regError ? regError.data.error.message : ''}
             </p>

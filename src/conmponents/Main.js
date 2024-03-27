@@ -25,8 +25,9 @@ export default function MainPage() {
                         <Link to={'/profile'}>{auth.user.username}</Link>
                     </li>
                     <li><Link to={'/auth-from'} onClick={() => dispatch(logout())}>登出</Link></li>
+                    <li><Link to={'/students'} >学生信息</Link></li>
                 </>}
             </ul>
-        </div>
+        </div >
     )
 }
